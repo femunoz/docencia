@@ -17,7 +17,7 @@ Cree una función que reciba dos números enteros como parámetros y retorne el 
 ### Ejercicio 2: Conversor de Temperatura (Celsius a Fahrenheit)
 
 Escriba una función que acepte una temperatura en grados Celsius (como número decimal) y devuelva su equivalente en grados Fahrenheit.
-Use la fórmula: 
+Use la fórmula: $F = (C \times 1.8) + 32$
 
 * **Prototipo:** `float celsius_a_fahrenheit(float celsius);`
 * **Ejemplo de prueba:**
