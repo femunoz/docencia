@@ -1,8 +1,3 @@
-Aquí tienes 3 problemas clásicos y sencillos de recursividad en C, ideales para nivelación o para las primeras guías de **Estructura de Datos**.
-
-Están diseñados para que el estudiante identifique claramente el **Caso Base** (detención) y el **Caso Recursivo** (llamada).
-
----
 
 ### Problema 1: Suma de los primeros N números naturales
 
