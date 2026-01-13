@@ -1,0 +1,108 @@
+
+### 1. El Cuadrado Mágico (Arreglos Bidimensionales)
+
+**Objetivo:** Validar si una matriz dada cumple con las propiedades de un cuadrado mágico.
+Un cuadrado mágico es una matriz de  donde la suma de cada fila, cada columna y ambas diagonales principales es exactamente la misma.
+
+* **Requerimientos:**
+* Leer un entero  (dimensión de la matriz) y luego los elementos de la matriz.
+* Implementar una función `int esCuadradoMagico(int n, int matriz[n][n])` que retorne `1` (true) o `0` (false).
+
+
+* **Ejemplo de Entrada:**
+```text
+3
+2 7 6
+9 5 1
+4 3 8
+
+```
+
+
+* **Ejemplo de Salida:**
+```text
+Es un cuadrado mágico. (La constante mágica es 15)
+
+```
+
+
+
+### 2. Compresión de Cadenas "Run-Length" (Strings y Lógica)
+
+**Objetivo:** Implementar un algoritmo básico de compresión de texto basado en la repetición de caracteres consecutivos.
+
+* **Requerimientos:**
+* Leer una cadena de texto (sin espacios) de hasta 100 caracteres.
+* Crear una nueva cadena donde cada secuencia de caracteres idénticos se reemplace por el carácter seguido del número de repeticiones.
+* Si la cadena "comprimida" no es más pequeña que la original, devolver la original.
+
+
+* **Ejemplo:**
+* Entrada: `aaabbbcccd`  Salida: `a3b3c3d1`
+* Entrada: `abc`  Salida: `abc` (porque `a1b1c1` es más larga).
+
+
+
+### 3. Base de Datos de Estudiantes (Structs y Ordenamiento)
+
+**Objetivo:** Manejar estructuras de datos compuestas y algoritmos de ordenamiento.
+
+* **Requerimientos:**
+* Definir un `struct Estudiante` con: nombre (cadena), edad (int) y promedio (float).
+* Pedir al usuario que ingrese datos para 5 estudiantes.
+* Implementar una función que ordene el arreglo de estudiantes de **mayor a menor** según su promedio (puedes usar Bubble Sort o Selection Sort).
+* Imprimir la lista ordenada.
+
+
+* **Desafío Extra:** Si dos estudiantes tienen el mismo promedio, ordénalos alfabéticamente por nombre.
+
+### 4. Inversión de Arreglo con Punteros (Aritmética de Punteros)
+
+**Objetivo:** Manipular arreglos utilizando exclusivamente aritmética de punteros, sin usar la notación de corchetes `[]` para el acceso a índices dentro de la función lógica.
+
+* **Requerimientos:**
+* Crear una función `void invertirArreglo(int *inicio, int *fin)`.
+* La función debe recibir un puntero al primer elemento y un puntero al último elemento del arreglo.
+* Debe intercambiar los valores "in-place" (sin crear un arreglo auxiliar) moviendo los punteros hacia el centro hasta que se crucen.
+
+
+* **Ejemplo de Código Main:**
+```c
+int arr[] = {1, 2, 3, 4, 5};
+invertirArreglo(arr, arr + 4);
+// Resultado esperado al imprimir: 5 4 3 2 1
+
+```
+
+
+
+### 5. Conversión Decimal a Binario (Recursividad)
+
+**Objetivo:** Entender la pila de llamadas recursivas y la representación binaria.
+
+* **Requerimientos:**
+* Escribir una función recursiva `void decimalABinario(int n)` que imprima la representación binaria de un número entero positivo.
+* **Restricción:** No puedes usar arreglos para almacenar los dígitos ni funciones de formato de `printf` especiales (como `%b` en compiladores modernos). Debes calcularlo usando división (`/`) y módulo (`%`).
+
+
+* **Lógica:**
+* Caso base: Si  es 0, termina (o retorna).
+* Paso recursivo: Llama a la función con `n / 2` *antes* de imprimir `n % 2`. Esto asegura que los bits se impriman en el orden correcto.
+
+
+
+---
+
+### Tabla de Conceptos Clave
+
+| Ejercicio | Conceptos Principales | Dificultad |
+| --- | --- | --- |
+| **1. Cuadrado Mágico** | Matrices, Bucles anidados, Sumatorias | Media |
+| **2. Compresión** | Strings (`char[]`), Búferes, Lógica condicional | Media-Baja |
+| **3. Estudiantes** | `struct`, `typedef`, Algoritmos de ordenamiento | Media-Alta |
+| **4. Punteros** | Aritmética de punteros, Paso por referencia, Swap | Alta |
+| **5. Recursividad** | Funciones recursivas, Stack, Operadores binarios | Media |
+
+### ¿Por dónde te gustaría empezar?
+
+¿Quieres que resuelva uno de estos ejercicios contigo paso a paso para analizar el código, o prefieres intentar resolverlos primero por tu cuenta?
