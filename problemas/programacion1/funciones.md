@@ -1,9 +1,77 @@
-1. El Cuadrado Mágico (Arreglos Bidimensionales)Objetivo: Validar si una matriz dada cumple con las propiedades de un cuadrado mágico.Un cuadrado mágico es una matriz de $N \times N$ donde la suma de cada fila, cada columna y ambas diagonales principales es exactamente la misma.Requerimientos:Leer un entero $N$ (dimensión de la matriz) y luego los elementos de la matriz.Implementar una función int esCuadradoMagico(int n, int matriz[n][n]) que retorne 1 (true) o 0 (false).Ejemplo de Entrada:Plaintext3
-2 7 6
-9 5 1
-4 3 8
-Ejemplo de Salida:PlaintextEs un cuadrado mágico. (La constante mágica es 15)
-2. Compresión de Cadenas "Run-Length" (Strings y Lógica)Objetivo: Implementar un algoritmo básico de compresión de texto basado en la repetición de caracteres consecutivos.Requerimientos:Leer una cadena de texto (sin espacios) de hasta 100 caracteres.Crear una nueva cadena donde cada secuencia de caracteres idénticos se reemplace por el carácter seguido del número de repeticiones.Si la cadena "comprimida" no es más pequeña que la original, devolver la original.Ejemplo:Entrada: aaabbbcccd $\rightarrow$ Salida: a3b3c3d1Entrada: abc $\rightarrow$ Salida: abc (porque a1b1c1 es más larga).3. Base de Datos de Estudiantes (Structs y Ordenamiento)Objetivo: Manejar estructuras de datos compuestas y algoritmos de ordenamiento.Requerimientos:Definir un struct Estudiante con: nombre (cadena), edad (int) y promedio (float).Pedir al usuario que ingrese datos para 5 estudiantes.Implementar una función que ordene el arreglo de estudiantes de mayor a menor según su promedio (puedes usar Bubble Sort o Selection Sort).Imprimir la lista ordenada.Desafío Extra: Si dos estudiantes tienen el mismo promedio, ordénalos alfabéticamente por nombre.4. Inversión de Arreglo con Punteros (Aritmética de Punteros)Objetivo: Manipular arreglos utilizando exclusivamente aritmética de punteros, sin usar la notación de corchetes [] para el acceso a índices dentro de la función lógica.Requerimientos:Crear una función void invertirArreglo(int *inicio, int *fin).La función debe recibir un puntero al primer elemento y un puntero al último elemento del arreglo.Debe intercambiar los valores "in-place" (sin crear un arreglo auxiliar) moviendo los punteros hacia el centro hasta que se crucen.Ejemplo de Código Main:Cint arr[] = {1, 2, 3, 4, 5};
-invertirArreglo(arr, arr + 4);
-// Resultado esperado al imprimir: 5 4 3 2 1
-5. Conversión Decimal a Binario (Recursividad)Objetivo: Entender la pila de llamadas recursivas y la representación binaria.Requerimientos:Escribir una función recursiva void decimalABinario(int n) que imprima la representación binaria de un número entero positivo.Restricción: No puedes usar arreglos para almacenar los dígitos ni funciones de formato de printf especiales (como %b en compiladores modernos). Debes calcularlo usando división (/) y módulo (%).Lógica:Caso base: Si $n$ es 0, termina (o retorna).Paso recursivo: Llama a la función con n / 2 antes de imprimir n % 2. Esto asegura que los bits se impriman en el orden correcto.
+Aquí tienes 3 problemas clásicos y sencillos de recursividad en C, ideales para nivelación o para las primeras guías de **Estructura de Datos**.
+
+Están diseñados para que el estudiante identifique claramente el **Caso Base** (detención) y el **Caso Recursivo** (llamada).
+
+---
+
+### Problema 1: Suma de los primeros N números naturales
+
+**Objetivo:** Crear una función que sume todos los números enteros desde 1 hasta `n`.
+
+* **Enunciado:** Escribe una función recursiva `int suma(int n)` que reciba un entero positivo y retorne la suma de 1 a n.
+* **Ejemplo:** `suma(5)` debería retornar `15` (5+4+3+2+1).
+
+```c
+int suma(int n) {
+    // Caso Base: Si llegamos a 0 (o 1), la suma termina.
+    if (n == 0) {
+        return 0;
+    }
+    // Caso Recursivo: n actual más la suma de los anteriores
+    else {
+        return n + suma(n - 1);
+    }
+}
+
+```
+
+---
+
+### Problema 2: Cálculo de Potencia
+
+**Objetivo:** Implementar la operación de potencia sin usar la librería `math.h`.
+
+* **Enunciado:** Escribe una función recursiva `int potencia(int base, int exponente)` que calcule el valor de `base` elevado a `exponente`. Asume exponentes positivos.
+* **Ejemplo:** `potencia(2, 3)` debería retornar `8`.
+
+```c
+int potencia(int base, int exponente) {
+    // Caso Base: Cualquier número elevado a 0 es 1
+    if (exponente == 0) {
+        return 1;
+    }
+    // Caso Recursivo: base multiplicada por la potencia con un grado menos
+    else {
+        return base * potencia(base, exponente - 1);
+    }
+}
+
+```
+
+---
+
+### Problema 3: Conteo de Dígitos
+
+**Objetivo:** Trabajar con la división entera para reducir el problema.
+
+* **Enunciado:** Escribe una función recursiva `int contarDigitos(int n)` que retorne la cantidad de dígitos que tiene un número entero positivo.
+* **Ejemplo:** `contarDigitos(450)` debería retornar `3`.
+
+```c
+int contarDigitos(int n) {
+    // Caso Base: Si el número es menor a 10, solo tiene 1 dígito.
+    if (n < 10) {
+        return 1;
+    }
+    // Caso Recursivo: 1 (por el dígito actual) + cuenta del resto del número
+    else {
+        return 1 + contarDigitos(n / 10);
+    }
+}
+
+```
+
+---
+
+**💡 Tip Pedagógico para ED:**
+Estos ejercicios son perfectos para hacer el "traza de escritorio" (prueba de escritorio) en la pizarra. Dibujar la "Pila de Llamadas" (Stack) visualmente ayuda mucho a que los estudiantes entiendan que la recursividad consume memoria y cómo se van resolviendo los retornos en cadena inversa.
