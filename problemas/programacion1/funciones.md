@@ -1,4 +1,8 @@
+# Guía de Ejercicios: Introducción a Funciones en C
 
+Instrucciones: Implemente las siguientes funciones en lenguaje C. Para cada ejercicio, respete el prototipo sugerido y asegúrese de que la función retorne el valor correcto en lugar de imprimirlo en pantalla (salvo que se indique lo contrario).
+
+---
 ### Problema 1: El Mayor de Dos Números
 
 Cree una función que reciba dos números enteros como parámetros y retorne el valor del mayor de ellos. Si ambos números son iguales, debe retornar cualquiera de los dos.
